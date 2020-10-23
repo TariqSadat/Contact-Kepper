@@ -4,6 +4,7 @@ node_modules
 
 # dependencies
 /client/node_modules
+/client/debug.log
 /.pnp
 .pnp.js
 
