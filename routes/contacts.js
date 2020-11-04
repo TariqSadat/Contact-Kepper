@@ -95,6 +95,7 @@ router.delete('/:id', auth , async (req, res) => {
     if(!contact){
       return res.status(404).json({ msg: 'Contact not found' });
     }
+
     // Make sure user owns contact
     if(contact.user.toString() !== req.user.id){
       return res.status(401).json({ msg: 'Not authorized' });
@@ -107,7 +108,6 @@ router.delete('/:id', auth , async (req, res) => {
     console.error(error.message);
     res.status(500).send('Server Error');
   }
-    res.send('Deleted contact');
 });
 
 module.exports = router;
